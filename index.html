@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JOSHUA APPIAH- Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+    .bg-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(24,28,32,0.65);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .hero .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 5px solid #00e676;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0.5rem 0 0.2rem 0;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 0 2px 16px #000a;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      color: #00e676;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .cta-btn {
+      background: #00e676;
+      color: #181c20;
+      border: none;
+      border-radius: 30px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #00e67644;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+    }
+    .cta-btn:hover {
+      background: #00b85c;
+      color: #fff;
+      box-shadow: 0 4px 24px #00e67666;
+    }
+    section, .contact {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 2rem 1.5rem;
+      background: rgba(34,38,42,0.55);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: none; }
+    }
+    h2 {
+      color: #00e676;
+      margin-top: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav {
+      margin: 1.5rem 0 0.5rem 0;
+    }
+    nav a {
+      color: #00e676;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #00e67688;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      list-style: none;
+      padding: 0;
+    }
+    .skills-list li {
+      background: rgba(24,28,32,0.45);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .skills-list li:hover {
+      background: rgba(34,38,42,0.65);
+      box-shadow: 0 4px 16px #00e67622;
+    }
+    .skills-list i {
+      color: #00e676;
+      font-size: 1.3rem;
+    }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+    .project-card {
+      display: flex;
+      gap: 1.5rem;
+      background: rgba(24,28,32,0.45);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+      overflow: hidden;
+      align-items: center;
+      transition: box-shadow 0.2s, background 0.2s;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 24px #00e67633;
+      background: rgba(34,38,42,0.65);
+    }
+    .project-img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      background: #181c20;
+      border-radius: 10px;
+    }
+    .project-info {
+      padding: 1rem 0;
+    }
+    .contact {
+      text-align: center;
+      margin: 2.5rem auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      max-width: 500px;
+      background: rgba(34,38,42,0.55);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      padding: 2rem 1.5rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+    }
+    .contact a {
+      color: #00e676;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .contact a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #00e67688;
+    }
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      background: rgba(34,38,42,0.85);
+      color: #888;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-top: 2rem;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 -2px 12px #0004;
+    }
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero .profile-pic { width: 90px; height: 90px; }
+      section, .contact { padding: 1.2rem 0.5rem; }
+      .project-img { width: 70px; height: 70px; }
+    }
+    .wave-bg {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 180px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.55;
+      animation: waveMove 8s linear infinite alternate;
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-60px); }
+    }
+    .modal-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(24,28,32,0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-bg.active { display: flex; }
+    .modal {
+      background: rgba(34,38,42,0.95);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px #00e67633;
+      padding: 2.2rem 2rem 1.5rem 2rem;
+      max-width: 600px;
+      max-height: 90vh;
+      width: 95vw;
+      color: #e0e0e0;
+      position: relative;
+      animation: fadeInUp 0.5s cubic-bezier(.23,1.01,.32,1) both;
+      overflow-y: auto;
+    }
+    @media (max-width: 700px) {
+      .modal { max-width: 98vw; padding: 1.2rem 0.5rem; }
+    }
+    .modal h3 { color: #00e676; margin-top: 0; }
+    .modal .close-btn {
+      position: absolute;
+      top: 1.1rem; right: 1.1rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .modal .close-btn:hover { color: #00e676; }
+    .modal .modal-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 12px #0005;
+    }
+    .modal .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: #00e676;
+      color: #181c20;
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #00e67644;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .modal .github-btn:hover {
+      background: #00b85c;
+      color: #fff;
+      box-shadow: 0 4px 24px #00e67666;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(.23,1.01,.32,1), transform 0.8s cubic-bezier(.23,1.01,.32,1);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .social-icons {
+      margin: 1.2rem 0 0.5rem 0;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+    }
+    .social-icons a {
+      color: #00e676;
+      font-size: 2rem;
+      transition: color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #fff;
+      transform: scale(1.18) rotate(-8deg);
+      text-shadow: 0 0 12px #00e67688;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <svg class="wave-bg" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#00e676" fill-opacity="0.18" d="M0,224L60,202.7C120,181,240,139,360,133.3C480,128,600,160,720,186.7C840,213,960,235,1080,218.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+  <div id="modal-bg" class="modal-bg">
+    <div class="modal" id="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <img src="" alt="Project Image" class="modal-img" id="modal-img">
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <a href="#" target="_blank" class="github-btn" id="modal-github"><i class="fab fa-github"></i> View on GitHub</a>
+    </div>
+  </div>
+  <section class="hero fade-in">
+    <img src="https://via.placeholder.com/140x140?text=+" alt="Profile Picture" class="profile-pic">
+    <h1>Joshua Appiah</h1>
+    <p>Cybersecurity Specialist</p>
+    <a href="#contact" class="cta-btn">Contact Me</a>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/joshua-appiah-774a2b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/joshua4455/joshua4455" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Cyber Passion" style="width: 90px; height: 90px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); background: #23272b; padding: 10px;">
+      <div style="flex: 1; min-width: 220px;">
+        <p style="font-size: 1.15rem; line-height: 1.7;">
+          <strong>Hello! I'm Joshua Appiah,</strong> a cybersecurity enthusiast driven by a deep passion for protecting digital worlds. My journey began with a curiosity for how systems work—and how they can be made more secure. I thrive on solving complex security challenges, from penetration testing and ethical hacking to digital forensics and incident response.<br><br>
+          I believe in continuous learning and enjoy sharing knowledge through awareness campaigns and hands-on projects. My mission is to empower organizations and individuals to stay safe in an ever-evolving cyber landscape. <span style="color:#00e676; font-weight:500;">Let's build a safer digital future together!</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li><i class="fas fa-bug"></i> Penetration Testing (Kali Linux, Metasploit, Burp Suite)</li>
+      <li><i class="fas fa-network-wired"></i> Network Security & Firewalls</li>
+      <li><i class="fas fa-shield-alt"></i> Vulnerability Assessment</li>
+      <li><i class="fas fa-user-secret"></i> Incident Response & Forensics</li>
+      <li><i class="fas fa-chart-line"></i> SIEM Tools (Splunk, ELK Stack)</li>
+      <li><i class="fab fa-python"></i> Python & Bash Scripting</li>
+      <li><i class="fas fa-clipboard-check"></i> Security Audits & Compliance</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <ul class="projects-list">
+      <li class="project-card fade-in" onclick="openModal(0)">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&h=400" alt="Web App Pentest" class="project-img">
+        <div class="project-info">
+          <strong>Web Application Penetration Test:</strong> Conducted a full security assessment for a fintech startup, identifying and mitigating critical vulnerabilities.
+          <span class="project-github"><i class="fab fa-github"></i> View on GitHub</span>
+        </div>
+      </li>
+      <li class="project-card fade-in" onclick="openModal(1)">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=400&h=400" alt="SIEM Deployment" class="project-img">
+        <div class="project-info">
+          <strong>SIEM Deployment:</strong> Implemented and configured ELK Stack for real-time log analysis and threat detection.
+          <span class="project-github"><i class="fab fa-github"></i> View on GitHub</span>
+        </div>
+      </li>
+      <li class="project-card fade-in" onclick="openModal(2)">
+        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=facearea&w=400&h=400" alt="Phishing Awareness" class="project-img">
+        <div class="project-info">
+          <strong>Phishing Awareness Campaign:</strong> Designed and executed a company-wide phishing simulation and training program.
+          <span class="project-github"><i class="fab fa-github"></i> View on GitHub</span>
+        </div>
+      </li>
+    </ul>
+    <style>
+      .project-link { text-decoration: none; color: inherit; display: block; }
+      .project-card { cursor: pointer; transition: transform 0.18s, box-shadow 0.18s; position: relative; }
+      .project-card:hover { transform: scale(1.025); box-shadow: 0 8px 32px #00e67655; background: rgba(34,38,42,0.98); }
+      .project-github { display: inline-flex; align-items: center; gap: 0.4em; margin-top: 0.7em; color: #00e676; font-weight: 600; font-size: 1.05em; }
+      .project-github i { font-size: 1.2em; }
+    </style>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:appiahjoshua098@gmail.com">appiahjoshua098@gmail.com</a></p>
+    <p>Phone: <a href="tel:+233597095202">+233 59 709 5202</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/joshua-appiah-774a2b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/joshua-appiah-774a2b22b</a></p>
+  </section>
+
+  <footer>
+    &copy; 2024 joshua appiah. All rights reserved.
+  </footer>
+  <script>
+    const projects = [
+      {
+        title: 'Web Application Penetration Test',
+        desc: 'Conducted a full security assessment for a fintech startup, identifying and mitigating critical vulnerabilities.',
+        img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&h=400',
+        github: 'https://github.com/joshua4455/joshua4455'
+      },
+      {
+        title: 'SIEM Deployment',
+        desc: 'Implemented and configured ELK Stack for real-time log analysis and threat detection.',
+        img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=facearea&w=400&h=400',
+        github: 'https://github.com/joshua4455/joshua4455'
+      },
+      {
+        title: 'Phishing Awareness Campaign',
+        desc: 'Designed and executed a company-wide phishing simulation and training program.',
+        img: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=facearea&w=400&h=400',
+        github: 'https://github.com/joshua4455/joshua4455'
+      }
+    ];
+    function openModal(idx) {
+      document.getElementById('modal-img').src = projects[idx].img;
+      document.getElementById('modal-title').textContent = projects[idx].title;
+      document.getElementById('modal-desc').textContent = projects[idx].desc;
+      document.getElementById('modal-github').href = projects[idx].github;
+      document.getElementById('modal-bg').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal-bg').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('modal-bg').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Fade-in on scroll
+    function onEntry(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(onEntry, { threshold: 0.15 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
